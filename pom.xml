@@ -22,7 +22,7 @@
     </properties>
 
     <build>
-
+        <pluginManagement>
             <plugins>
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -47,7 +47,7 @@
                     </executions>
                 </plugin>
             </plugins>
-
+        </pluginManagement>
     </build>
 
 </project>
