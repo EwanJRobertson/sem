@@ -13,7 +13,8 @@ public class App
         a.connect();
 
         // Get country info
-        a.displayCountry(a.getCountry("GBR"));
+        Country country = a.getCountry("GBR");
+        a.displayCountry(country);
 
         // Disconnect from database
         a.disconnect();
