@@ -30,7 +30,7 @@ public class App
             String strSelect =
                     "SELECT Code, Name, Population "
                             + "FROM country "
-                            + "WHERE Code = " + code;
+                            + "WHERE Code = '" + code + "'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country if valid.
