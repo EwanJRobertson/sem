@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class App
 {
-    public void main(String[] args)
+    public static void main(String[] args)
     {
         // Create new Application
         App a = new App();
@@ -13,7 +13,7 @@ public class App
         a.connect();
 
         // Get country info
-        displayCountry(getCountry("GBR"));
+        a.displayCountry(a.getCountry("GBR"));
 
         // Disconnect from database
         a.disconnect();
@@ -53,7 +53,7 @@ public class App
         }
     }
 
-    public static void displayCountry(Country c)
+    public void displayCountry(Country c)
     {
         System.out.println("Code:"+c.code);
         System.out.println("Name:"+c.name);
