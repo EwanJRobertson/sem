@@ -44,7 +44,6 @@ public class App
                 return country;
             }
             else
-                System.out.println("No worky");
                 return null;
         }
         catch (Exception e)
