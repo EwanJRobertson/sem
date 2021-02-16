@@ -37,9 +37,9 @@ public class App
             if (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.population = rset.getInt("population");
+                country.code = rset.getString("Code");
+                country.name = rset.getString("Name");
+                country.population = rset.getInt("Population");
                 return country;
             }
             else
