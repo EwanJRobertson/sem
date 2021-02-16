@@ -4,6 +4,62 @@ import java.sql.*;
 
 public class App
 {
+    public void main(String[] args)
+    {
+        // Create new Application
+        App a = new App();
+
+        // Connect to database
+        a.connect();
+
+        // Get country info
+        displayCountry(getCountry("GBR"));
+
+        // Disconnect from database
+        a.disconnect();
+    }
+
+    public Country getCountry (String code)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Code, Name, Population "
+                            + "FROM country "
+                            + "WHERE Code = " + code;
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            if (rset.next())
+            {
+                Country country = new Country();
+                country.code = rset.getString("code");
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                return country;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
+    public static void displayCountry(Country c)
+    {
+        System.out.println("Code:"+c.code);
+        System.out.println("Name:"+c.name);
+        System.out.println("Population:"+c.population);
+    }
+
     /**
      * Connection to MySQL database.
      */
