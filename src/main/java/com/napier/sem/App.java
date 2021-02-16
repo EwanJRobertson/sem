@@ -32,7 +32,7 @@ public class App
                             + "WHERE Code = " + code;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
+            // Return new country if valid.
             // Check one is returned
             if (rset.next())
             {
@@ -43,6 +43,7 @@ public class App
                 return country;
             }
             else
+                System.out.println("No worky");
                 return null;
         }
         catch (Exception e)
@@ -53,11 +54,11 @@ public class App
         }
     }
 
-    public void displayCountry(Country c)
+    public void displayCountry(Country country)
     {
-        System.out.println("Code:"+c.code);
-        System.out.println("Name:"+c.name);
-        System.out.println("Population:"+c.population);
+        System.out.println("Code:"+country.code);
+        System.out.println("Name:"+country.name);
+        System.out.println("Population:"+country.population);
     }
 
     /**
