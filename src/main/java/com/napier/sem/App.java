@@ -4,6 +4,11 @@ import java.sql.*;
 
 public class App
 {
+    /**
+     * Connection to MySQL database.
+     */
+    private Connection con = null;
+
     public static void main(String[] args)
     {
         // Create new Application
@@ -60,11 +65,6 @@ public class App
         System.out.println("Name:"+country.name);
         System.out.println("Population:"+country.population);
     }
-
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
 
     /**
      * Connect to the MySQL database.
